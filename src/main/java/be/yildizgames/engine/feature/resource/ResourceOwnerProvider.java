@@ -24,7 +24,9 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildiz.common.id.EntityId; /**
+import be.yildiz.common.id.EntityId;
+
+/**
  * @author Grégory Van den Borre
  */
 public interface ResourceOwnerProvider {
