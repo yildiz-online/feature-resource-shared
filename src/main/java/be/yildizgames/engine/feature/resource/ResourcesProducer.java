@@ -24,8 +24,8 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildiz.common.collections.Sets;
-import be.yildiz.common.id.EntityId;
+import be.yildizgames.common.collection.Sets;
+import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.resource.bonus.BonusListener;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 import org.slf4j.Logger;
@@ -279,7 +279,7 @@ public final class ResourcesProducer {
      */
     private boolean invariant() {
         if (this.lastUpdate <= 0) {
-            LOGGER.warn("INVARIANT FAIL: lastUpdate value: " + this.lastUpdate);
+            LOGGER.warn("INVARIANT FAIL: lastUpdate value: {}", this.lastUpdate);
             return false;
         }
         if (this.limit == null) {
