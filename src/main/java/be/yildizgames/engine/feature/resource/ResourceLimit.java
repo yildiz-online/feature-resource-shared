@@ -24,8 +24,8 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildiz.common.collections.CollectionUtil;
-import be.yildiz.common.collections.Sets;
+import be.yildizgames.common.collection.CollectionUtil;
+import be.yildizgames.common.collection.Sets;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 
 import java.util.Arrays;
