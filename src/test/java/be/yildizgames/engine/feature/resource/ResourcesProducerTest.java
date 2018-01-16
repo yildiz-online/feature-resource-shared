@@ -24,7 +24,7 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildiz.common.id.EntityId;
+import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 import org.junit.jupiter.api.Test;
 
