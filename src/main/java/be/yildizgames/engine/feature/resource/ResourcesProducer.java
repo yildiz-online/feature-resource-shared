@@ -31,7 +31,7 @@ import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Set;
 
 /**
@@ -266,7 +266,7 @@ public final class ResourcesProducer {
         final StringBuilder builder = new StringBuilder("Resources producer:");
         builder.append(this.resources);
         builder.append("last update:");
-        builder.append(new Date(this.lastUpdate));
+        builder.append(LocalDate.ofEpochDay(this.lastUpdate));
         builder.append(this.ratio);
         builder.append(this.limit);
         return builder.toString();

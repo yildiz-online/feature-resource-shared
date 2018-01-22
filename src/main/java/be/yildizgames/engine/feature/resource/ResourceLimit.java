@@ -64,7 +64,7 @@ public final class ResourceLimit {
      * @param position Resource position in array.
      * @return The limit value for the matching resource.
      */
-    protected float getLimits(final int position) {
+    float getLimits(final int position) {
         return this.limits[position];
     }
 

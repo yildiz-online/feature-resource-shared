@@ -25,7 +25,11 @@
 package be.yildizgames.engine.feature.resource.protocol.mapper;
 
 
-import be.yildizgames.common.mapping.*;
+import be.yildizgames.common.mapping.EntityIdMapper;
+import be.yildizgames.common.mapping.LongMapper;
+import be.yildizgames.common.mapping.MappingException;
+import be.yildizgames.common.mapping.ObjectMapper;
+import be.yildizgames.common.mapping.Separator;
 import be.yildizgames.engine.feature.resource.ResourceValueDto;
 
 /**

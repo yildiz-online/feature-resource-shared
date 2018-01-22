@@ -24,7 +24,11 @@
 
 package be.yildizgames.engine.feature.resource.protocol.mapper;
 
-import be.yildizgames.common.mapping.*;
+import be.yildizgames.common.mapping.IntegerMapper;
+import be.yildizgames.common.mapping.MappingException;
+import be.yildizgames.common.mapping.ObjectMapper;
+import be.yildizgames.common.mapping.PlayerIdMapper;
+import be.yildizgames.common.mapping.Separator;
 import be.yildizgames.engine.feature.resource.ResourceTransferDto;
 import be.yildizgames.engine.feature.resource.TransferCause;
 
