@@ -26,7 +26,10 @@ package be.yildizgames.engine.feature.resource;
 
 import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
+import com.jayway.awaitility.Awaitility;
 import org.junit.jupiter.api.Test;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -45,13 +48,13 @@ final class ResourcesProducerTest {
         producer.addBonus(new DummyRatio());
         producer.setInitialised();
         assertEquals(0.0f, producer.getResource(0), 0.1f);
-        Thread.sleep(3000);
+        Awaitility.with().pollDelay(3, TimeUnit.SECONDS).until(() -> producer.getResources());
         assertEquals(3.0f, producer.getResource(0), 0.1f);
-        Thread.sleep(3000);
+        Awaitility.with().pollDelay(3, TimeUnit.SECONDS).until(() -> producer.getResources());
         assertEquals(MAX, producer.getResource(0), 0.1f);
         producer.addBonus(new DummyMaxResources(10));
         assertEquals(5.0f, producer.getResource(0), 0.1f);
-        Thread.sleep(1000);
+        Awaitility.with().pollDelay(1, TimeUnit.SECONDS).until(() -> producer.getResources());
         assertEquals(6.0f, producer.getResource(0), 0.1f);
     }
 
