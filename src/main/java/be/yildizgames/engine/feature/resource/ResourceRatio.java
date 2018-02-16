@@ -24,10 +24,10 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildizgames.common.collection.Sets;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -45,7 +45,7 @@ public final class ResourceRatio {
     /**
      * List of bonus to apply to compute the ratio values.
      */
-    private final Set<BonusResources> bonusList = Sets.newSet();
+    private final Set<BonusResources> bonusList = new HashSet<>();
 
     /**
      * Full constructor.

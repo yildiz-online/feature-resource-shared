@@ -24,47 +24,53 @@
 
 package be.yildizgames.engine.feature.resource.protocol.mapper;
 
-
-import be.yildizgames.common.mapping.LongMapper;
 import be.yildizgames.common.mapping.MappingException;
 import be.yildizgames.common.mapping.ObjectMapper;
 import be.yildizgames.common.mapping.Separator;
-import be.yildizgames.common.mapping.model.EntityIdMapper;
-import be.yildizgames.engine.feature.resource.ResourceValueDto;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 
 /**
  * @author Grégory Van den Borre
  */
-public class ResourceValueDtoMapper implements ObjectMapper<ResourceValueDto> {
+public abstract class BaseMapperTest<T>{
 
-    private static final ResourceValueDtoMapper INSTANCE = new ResourceValueDtoMapper();
+    private final ObjectMapper<T> mapper;
+    private final T baseObject;
 
-    private ResourceValueDtoMapper() {
-        super();
+    protected BaseMapperTest(ObjectMapper<T> mapper, T baseObject) {
+        this.mapper = mapper;
+        this.baseObject = baseObject;
     }
 
-    public static ResourceValueDtoMapper getInstance() {
-        return INSTANCE;
+    @Test
+    void happyFlow() throws MappingException {
+        String to = mapper.to(baseObject);
+        T from = mapper.from(to);
+        Assertions.assertEquals(baseObject, from);
     }
 
-    @Override
-    public ResourceValueDto from(String s) throws MappingException {
-        assert s != null;
-        try {
-            String[] v = s.split(Separator.OBJECTS_SEPARATOR);
-            return new ResourceValueDto(EntityIdMapper.getInstance().from(v[0]), ResourceValueMapper.getInstance().from(v[1]), LongMapper.getInstance().from(v[2]));
-        } catch (IndexOutOfBoundsException e) {
-            throw new MappingException(e);
+    @Test
+    void tooShort() throws MappingException {
+        String to = mapper.to(baseObject);
+        if (to.contains(Separator.OBJECTS_SEPARATOR)) {
+            Assertions.assertThrows(MappingException.class, () -> mapper.from(to.substring(0, to.indexOf(Separator.OBJECTS_SEPARATOR))));
+        } else if (to.contains(Separator.VAR_SEPARATOR)) {
+            Assertions.assertThrows(MappingException.class, () -> mapper.from(to.substring(0, to.indexOf(Separator.VAR_SEPARATOR))));
+        } else {
+            Assertions.assertThrows(MappingException.class, () -> mapper.from(""));
         }
     }
 
-    @Override
-    public String to(ResourceValueDto dto) {
-        assert dto != null;
-        return EntityIdMapper.getInstance().to(dto.cityId)
-                + Separator.OBJECTS_SEPARATOR
-                + ResourceValueMapper.getInstance().to(dto.resources)
-                + Separator.OBJECTS_SEPARATOR
-                + LongMapper.getInstance().to(dto.time);
+    @Test
+    void fromNull() throws MappingException {
+        Assertions.assertThrows(AssertionError.class, () -> mapper.from(null));
     }
+
+    @Test
+    void toNull() {
+        Assertions.assertThrows(AssertionError.class, () -> mapper.to(null));
+    }
+
 }

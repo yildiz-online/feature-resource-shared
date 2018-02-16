@@ -22,26 +22,11 @@
  *
  */
 
-package be.yildizgames.engine.feature.resource.protocol.mapper;
-
-import be.yildizgames.common.model.PlayerId;
-import be.yildizgames.engine.feature.resource.ResourceTransferDto;
-import be.yildizgames.engine.feature.resource.ResourceValue;
-import be.yildizgames.engine.feature.resource.TransferCause;
-
-/**
- * @author Grégory Van den Borre
- */
-public class ResourceTransferDtoMapperTest extends BaseMapperTest<ResourceTransferDto> {
-
-    private static final float[] f = {1000,100,1};
-
-    public ResourceTransferDtoMapperTest() {
-        super(ResourceTransferDtoMapper.getInstance(), new ResourceTransferDto(
-                PlayerId.valueOf(1),
-                PlayerId.valueOf(2),
-                new ResourceValue(f),
-                TransferCause.valueOf(1)
-        ));
-    }
+module be.yildizgames.feature.resource.shared {
+    requires be.yildizgames.common.model;
+    requires slf4j.api;
+    requires be.yildizgames.common.logging;
+    requires be.yildizgames.common.mapping;
+    requires be.yildizgames.common.mapping.model;
+    requires be.yildizgames.common.util;
 }

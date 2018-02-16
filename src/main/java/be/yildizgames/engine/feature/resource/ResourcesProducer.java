@@ -24,14 +24,14 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildizgames.common.collection.Sets;
+import be.yildizgames.common.logging.LogFactory;
 import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.resource.bonus.BonusListener;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -41,7 +41,7 @@ import java.util.Set;
  */
 public final class ResourcesProducer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ResourcesProducer.class);
+    private static final Logger LOGGER = LogFactory.getInstance().getLogger(ResourcesProducer.class);
 
     /**
      * Contains the ratio values, the array must math the resource array.
@@ -52,15 +52,19 @@ public final class ResourcesProducer {
      * Contains the last computed resource values.
      */
     private final ResourceValue resources;
+
     /**
      * Limit to stop the production, it will not exceed this values.
      */
     private final ResourceLimit limit;
+
     /**
      * List of associated bonus.
      */
-    private final Set<BonusListener> bonusListenerList = Sets.newSet();
-    private final Set<BonusResources> bonus = Sets.newSet();
+    private final Set<BonusListener> bonusListenerList = new HashSet<>();
+
+    private final Set<BonusResources> bonus = new HashSet<>();
+
     private final EntityId city;
     /**
      * Time when the resources were computed for the last time.

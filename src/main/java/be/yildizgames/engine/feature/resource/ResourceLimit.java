@@ -24,11 +24,10 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildizgames.common.collection.CollectionUtil;
-import be.yildizgames.common.collection.Sets;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -46,7 +45,7 @@ public final class ResourceLimit {
     /**
      * List of bonus to change the limit values.
      */
-    private final Set<BonusResources> bonus = Sets.newSet();
+    private final Set<BonusResources> bonus = new HashSet<>();
 
     /**
      * Build a new limit from an array values.
@@ -55,7 +54,7 @@ public final class ResourceLimit {
      */
     ResourceLimit(final float[] limits) {
         super();
-        this.limits = CollectionUtil.arrayCopy(limits);
+        this.limits = limits.clone();
     }
 
     /**

@@ -67,16 +67,7 @@ public class ResourceTransferDto {
 
         ResourceTransferDto that = (ResourceTransferDto) o;
 
-        if (!receiver.equals(that.receiver)) {
-            return false;
-        }
-        if (!giver.equals(that.giver)) {
-            return false;
-        }
-        if (!resources.equals(that.resources)) {
-            return false;
-        }
-        return cause == that.cause;
+        return receiver.equals(that.receiver) && giver.equals(that.giver) && resources.equals(that.resources) && cause == that.cause;
     }
 
     @Override

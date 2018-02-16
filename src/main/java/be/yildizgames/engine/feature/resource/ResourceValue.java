@@ -24,7 +24,6 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildizgames.common.collection.CollectionUtil;
 import be.yildizgames.common.util.Util;
 
 import java.util.Arrays;
@@ -39,7 +38,7 @@ public class ResourceValue {
     /**
      * Values of the resources.
      */
-    private final float[] values;
+    private float[] values;
 
     /**
      * Full constructor.
@@ -49,7 +48,7 @@ public class ResourceValue {
     public ResourceValue (final float[] values) {
         super();
         assert  values != null;
-        this.values = CollectionUtil.arrayCopy(values);
+        this.values = values.clone();
     }
 
     /**
@@ -60,7 +59,7 @@ public class ResourceValue {
      * @return <code>true</code> if the player had enough resources to pay the price and the transaction has been done, <code>false</code> otherwise.
      */
     final boolean buy(final ResourceValue price) {
-        if (!CollectionUtil.checkBiggerOrEqual(this.values, price.values)) {
+        if (!Util.checkBiggerOrEqual(this.values, price.values)) {
             return false;
         }
         for (int i = 0; i < this.values.length; i++) {
@@ -73,7 +72,7 @@ public class ResourceValue {
      * @return A copy of the array containing the values.
      */
     public final float[] getArray() {
-        return Arrays.copyOf(this.values, this.values.length);
+        return this.values.clone();
     }
 
     /**
@@ -117,7 +116,7 @@ public class ResourceValue {
      * @return <code>true</code> if resources are bigger than the price.
      */
     final boolean canBuy(final ResourceValue price) {
-        return CollectionUtil.checkBiggerOrEqual(this.values, price.values);
+        return Util.checkBiggerOrEqual(this.values, price.values);
     }
 
     @Override
@@ -130,7 +129,7 @@ public class ResourceValue {
     }
 
     final void setValues(final ResourceValue other) {
-        CollectionUtil.cloneArray(this.values, other.values);
+        this.values = other.values;
     }
 
     @Override

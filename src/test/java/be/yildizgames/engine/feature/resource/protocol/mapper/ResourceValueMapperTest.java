@@ -24,7 +24,6 @@
 
 package be.yildizgames.engine.feature.resource.protocol.mapper;
 
-import be.yildizgames.common.mapping.BaseMapperTest;
 import be.yildizgames.engine.feature.resource.ResourceValue;
 
 /**
