@@ -21,17 +21,21 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
+package be.yildizgames.engine.feature.resource.protocol.mapper;
 
-module be.yildizgames.feature.resource.shared {
-    requires be.yildizgames.common.model;
-    requires slf4j.api;
-    requires be.yildizgames.common.logging;
-    requires be.yildizgames.common.mapping;
-    requires be.yildizgames.common.mapping.model;
-    requires be.yildizgames.common.util;
-    requires be.yildizgames.common.exception;
+import be.yildizgames.common.exception.business.BusinessException;
 
-    exports be.yildizgames.engine.feature.resource;
-    exports be.yildizgames.engine.feature.resource.protocol.mapper;
-    exports be.yildizgames.engine.feature.resource.bonus;
+class MappingException extends BusinessException {
+
+    MappingException(String message) {
+        super(message);
+    }
+
+    MappingException(Exception cause) {
+        super(cause);
+    }
+
+    MappingException(String message, Exception cause) {
+        super(message, cause);
+    }
 }
