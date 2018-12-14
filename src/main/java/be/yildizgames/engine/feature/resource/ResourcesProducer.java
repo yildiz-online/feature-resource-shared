@@ -24,11 +24,11 @@
 
 package be.yildizgames.engine.feature.resource;
 
-import be.yildizgames.common.logging.LogFactory;
 import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.resource.bonus.BonusListener;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -41,7 +41,7 @@ import java.util.Set;
  */
 public final class ResourcesProducer {
 
-    private static final Logger LOGGER = LogFactory.getInstance().getLogger(ResourcesProducer.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ResourcesProducer.class);
 
     /**
      * Contains the ratio values, the array must math the resource array.
