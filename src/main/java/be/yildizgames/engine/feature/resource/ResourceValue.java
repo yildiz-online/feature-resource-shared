@@ -58,7 +58,7 @@ public class ResourceValue {
      * @param price Amount of resources to remove.
      * @return <code>true</code> if the player had enough resources to pay the price and the transaction has been done, <code>false</code> otherwise.
      */
-    final boolean buy(final ResourceValue price) {
+    public final boolean buy(final ResourceValue price) {
         if (!Util.checkBiggerOrEqual(this.values, price.values)) {
             return false;
         }
