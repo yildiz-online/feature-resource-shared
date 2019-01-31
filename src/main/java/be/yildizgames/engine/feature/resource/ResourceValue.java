@@ -1,9 +1,9 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
  *
- *  Copyright (c) 2018 Grégory Van den Borre
+ *  Copyright (c) 2019 Grégory Van den Borre
  *
- *  More infos available: https://www.yildiz-games.be
+ *  More infos available: https://engine.yildiz-games.be
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  *  documentation files (the "Software"), to deal in the Software without restriction, including without
@@ -58,7 +58,7 @@ public class ResourceValue {
      * @param price Amount of resources to remove.
      * @return <code>true</code> if the player had enough resources to pay the price and the transaction has been done, <code>false</code> otherwise.
      */
-    final boolean buy(final ResourceValue price) {
+    public final boolean buy(final ResourceValue price) {
         if (!Util.checkBiggerOrEqual(this.values, price.values)) {
             return false;
         }
