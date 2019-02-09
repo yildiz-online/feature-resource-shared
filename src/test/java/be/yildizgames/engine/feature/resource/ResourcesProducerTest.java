@@ -36,10 +36,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Grégory Van den Borre
  */
-final class ResourcesProducerTest {
+public final class ResourcesProducerTest {
 
     @Test
-    void testResourcesProducer() throws InterruptedException {
+    public void testResourcesProducer() throws InterruptedException {
         final float MAX = 5.0f;
         long time = System.currentTimeMillis();
         ResourceValue resources = new ResourceValue(new float[]{0.0f});
@@ -59,7 +59,7 @@ final class ResourcesProducerTest {
     }
 
     @Test
-    void testAddBonusLimit() throws InterruptedException {
+    public void testAddBonusLimit() throws InterruptedException {
         ResourceValue resources = new ResourceValue(new float[]{0f});
         ResourcesProducer producer = new ResourcesProducer(EntityId.WORLD, 10, resources);
         producer.addBonus(new DummyMaxResources(5));
@@ -71,7 +71,7 @@ final class ResourcesProducerTest {
     }
 
     @Test
-    void testResourcesProducerSetNewValues() {
+    public void testResourcesProducerSetNewValues() {
         final float MAX = 5.0f;
         long time = System.currentTimeMillis();
         ResourceValue resources = new ResourceValue(new float[]{0.0f});
@@ -85,7 +85,7 @@ final class ResourcesProducerTest {
     }
 
     @Test
-    void testAddBonusRatio() {
+    public void testAddBonusRatio() {
         ResourceValue resources = new ResourceValue(new float[]{0.0f});
         ResourcesProducer producer = new ResourcesProducer(EntityId.WORLD, System.currentTimeMillis(), resources);
         assertEquals(0.0f, producer.getRatios(0), 0.001);
@@ -96,39 +96,39 @@ final class ResourcesProducerTest {
     }
 
     @Test
-    void testSetRatio() {
+    public void testSetRatio() {
     }
 
     @Test
-    void testGetResources() {
+    public void testGetResources() {
     }
 
     @Test
-    void testGetRatios() {
+    public void testGetRatios() {
     }
 
     @Test
-    void testGetLastUpdate() {
+    public void testGetLastUpdate() {
     }
 
     @Test
-    void testToString() {
+    public void testToString() {
     }
 
     @Test
-    void testGetResourcesArray() {
+    public void testGetResourcesArray() {
     }
 
     @Test
-    void testSetMax() {
+    public void testSetMax() {
     }
 
     @Test
-    void testSetRatioValue() {
+    public void testSetRatioValue() {
     }
 
     @Test
-    void testGetMax() {
+    public void testGetMax() {
     }
 
     private static final class DummyMaxResources extends BonusResources {
