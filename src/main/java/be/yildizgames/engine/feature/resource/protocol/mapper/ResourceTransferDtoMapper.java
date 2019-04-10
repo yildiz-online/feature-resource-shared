@@ -48,7 +48,7 @@ public class ResourceTransferDtoMapper implements ObjectMapper<ResourceTransferD
     }
 
     @Override
-    public ResourceTransferDto from(String s) throws MappingException {
+    public ResourceTransferDto from(String s) {
         assert s != null;
         String[] v = s.split(Separator.OBJECTS_SEPARATOR);
         try {

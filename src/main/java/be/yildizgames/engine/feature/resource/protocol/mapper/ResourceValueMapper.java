@@ -45,7 +45,7 @@ public class ResourceValueMapper implements ObjectMapper<ResourceValue> {
     }
 
     @Override
-    public ResourceValue from(String s) throws MappingException {
+    public ResourceValue from(String s) {
         assert s != null;
         try {
             String[] v = s.split(Separator.VAR_SEPARATOR);

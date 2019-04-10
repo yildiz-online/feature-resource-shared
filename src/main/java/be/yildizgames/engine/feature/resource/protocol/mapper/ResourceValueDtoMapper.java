@@ -47,7 +47,7 @@ public class ResourceValueDtoMapper implements ObjectMapper<ResourceValueDto> {
     }
 
     @Override
-    public ResourceValueDto from(String s) throws MappingException {
+    public ResourceValueDto from(String s) {
         assert s != null;
         try {
             String[] v = s.split(Separator.OBJECTS_SEPARATOR);

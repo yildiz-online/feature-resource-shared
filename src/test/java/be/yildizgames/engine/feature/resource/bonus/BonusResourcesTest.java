@@ -31,10 +31,10 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Grégory Van den Borre
  */
-class BonusResourcesTest {
+public class BonusResourcesTest {
 
     @Test
-    void testBonusResourcesFloatArrayFloatArrayInt() {
+    public void testBonusResourcesFloatArrayFloatArrayInt() {
         float[] r = new float[]{1, 2};
         float[] l = new float[]{2, 3};
         BonusResources br = new BonusResources(r, l, 12);
@@ -45,7 +45,7 @@ class BonusResourcesTest {
     }
 
     @Test
-    void testBonusResourcesFloatArrayFloatArray() {
+    public void testBonusResourcesFloatArrayFloatArray() {
         float[] r = new float[]{1, 2};
         float[] l = new float[]{2, 3};
         BonusResources br = new BonusResources(r, l);
@@ -55,28 +55,28 @@ class BonusResourcesTest {
         Assertions.assertEquals(1, br.getLimit(0), 0001f);
     }
 
-    void testBonusResourcesFloatArrayFloatArrayNotSameSize() {
+    public void testBonusResourcesFloatArrayFloatArrayNotSameSize() {
         float[] r = new float[2];
         float[] l = new float[3];
         Assertions.assertThrows(IllegalArgumentException.class, () -> new BonusResources(r, l));
     }
 
     @Test
-    void testBonusResourcesFloatArrayNullFloatArray() {
+    public void testBonusResourcesFloatArrayNullFloatArray() {
         float[] r = null;
         float[] l = new float[2];
         Assertions.assertThrows(NullPointerException.class, () -> new BonusResources(r, l));
     }
 
     @Test
-    void testBonusResourcesFloatArrayFloatArrayNull() {
+    public void testBonusResourcesFloatArrayFloatArrayNull() {
         float[] r = new float[2];
         float[] l = null;
         Assertions.assertThrows(NullPointerException.class, () -> new BonusResources(r, l));
     }
 
     @Test
-    void testHashCode() {
+    public void testHashCode() {
         float[] r = new float[]{1, 2};
         float[] l = new float[]{2, 3};
         BonusResources br = new BonusResources(r, l);
@@ -86,7 +86,7 @@ class BonusResourcesTest {
     }
 
     @Test
-    void testEqualsObject() {
+    public void testEqualsObject() {
         float[] r = new float[]{1, 2};
         float[] l = new float[]{2, 3};
         BonusResources br = new BonusResources(r, l);
@@ -102,7 +102,7 @@ class BonusResourcesTest {
     }
 
     @Test
-    void testHasMalus() {
+    public void testHasMalus() {
         float[] r = new float[]{1, 2};
         float[] l = new float[]{2, 3};
         BonusResources br = new BonusResources(r, l);
@@ -116,7 +116,7 @@ class BonusResourcesTest {
     }
 
     @Test
-    void testGetRatio() {
+    public void testGetRatio() {
         float[] r = new float[]{1, 2};
         float[] l = new float[]{2, 3};
         BonusResources br = new BonusResources(r, l);
@@ -125,7 +125,7 @@ class BonusResourcesTest {
     }
 
     @Test
-    void testGetLimit() {
+    public void testGetLimit() {
         float[] r = new float[]{1, 2};
         float[] l = new float[]{2, 3};
         BonusResources br = new BonusResources(r, l);
