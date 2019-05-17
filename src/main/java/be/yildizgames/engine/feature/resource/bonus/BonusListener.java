@@ -42,5 +42,4 @@ public interface BonusListener {
      * @param bonus Bonus removed.
      */
     void bonusRemoved(BonusResources bonus);
-
 }

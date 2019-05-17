@@ -148,4 +148,5 @@ public class BonusResources {
         }
         return this == obj;
     }
+
 }
