@@ -132,5 +132,4 @@ public class BonusResourcesTest {
         Assertions.assertEquals(2, br.getLimit(0), 0.01);
         Assertions.assertEquals(3, br.getLimit(1), 0.01);
     }
-
 }
