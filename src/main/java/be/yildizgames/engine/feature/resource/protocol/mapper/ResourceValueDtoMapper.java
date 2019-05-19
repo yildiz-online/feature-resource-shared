@@ -66,4 +66,5 @@ public class ResourceValueDtoMapper implements ObjectMapper<ResourceValueDto> {
                 + Separator.OBJECTS_SEPARATOR
                 + LongMapper.getInstance().to(dto.time);
     }
+
 }

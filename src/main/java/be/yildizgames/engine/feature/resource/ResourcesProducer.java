@@ -319,10 +319,10 @@ public final class ResourcesProducer {
     }
 
     public EntityId getCity() {
-        return city;
+        return this.city;
     }
 
     public long getLastUpdate() {
-        return lastUpdate;
+        return this.lastUpdate;
     }
 }

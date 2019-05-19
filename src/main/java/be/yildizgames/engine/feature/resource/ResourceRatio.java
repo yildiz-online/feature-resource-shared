@@ -146,5 +146,4 @@ public final class ResourceRatio {
         }
         return false;
     }
-
 }

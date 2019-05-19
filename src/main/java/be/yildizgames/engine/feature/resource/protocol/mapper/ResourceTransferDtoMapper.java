@@ -74,4 +74,5 @@ public class ResourceTransferDtoMapper implements ObjectMapper<ResourceTransferD
                 + Separator.OBJECTS_SEPARATOR
                 + IntegerMapper.getInstance().to(dto.cause.value);
     }
+
 }

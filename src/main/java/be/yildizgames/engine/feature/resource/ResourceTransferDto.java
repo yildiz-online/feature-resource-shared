@@ -78,4 +78,5 @@ public class ResourceTransferDto {
         result = 31 * result + cause.hashCode();
         return result;
     }
+
 }

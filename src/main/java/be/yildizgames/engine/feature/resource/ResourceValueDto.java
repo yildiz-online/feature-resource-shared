@@ -73,4 +73,5 @@ public class ResourceValueDto {
         result = 31 * result + (int) (time ^ (time >>> 32));
         return result;
     }
+
 }

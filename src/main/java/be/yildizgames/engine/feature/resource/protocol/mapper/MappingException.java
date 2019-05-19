@@ -38,4 +38,5 @@ class MappingException extends BusinessException {
     MappingException(String message, Exception cause) {
         super(message, cause);
     }
+
 }

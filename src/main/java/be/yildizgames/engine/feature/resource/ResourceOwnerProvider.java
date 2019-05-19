@@ -33,4 +33,5 @@ import be.yildizgames.common.model.EntityId;
 public interface ResourceOwnerProvider {
 
     ResourceOwner getOwnerById(EntityId cityId);
+
 }

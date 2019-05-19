@@ -30,4 +30,5 @@ package be.yildizgames.engine.feature.resource;
 public interface ResourceOwner {
 
     ResourcesProducer getProducer();
+
 }

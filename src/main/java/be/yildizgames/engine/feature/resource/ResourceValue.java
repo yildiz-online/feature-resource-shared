@@ -158,4 +158,5 @@ public class ResourceValue {
     public int hashCode() {
         return Arrays.hashCode(values);
     }
+
 }

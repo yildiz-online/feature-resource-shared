@@ -38,6 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public final class ResourcesProducerTest {
 
+
     @Test
     public void testResourcesProducer() throws InterruptedException {
         final float MAX = 5.0f;

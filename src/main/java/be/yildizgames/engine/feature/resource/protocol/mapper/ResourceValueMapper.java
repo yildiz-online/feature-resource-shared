@@ -77,4 +77,5 @@ public class ResourceValueMapper implements ObjectMapper<ResourceValue> {
 
         return result.substring(0, result.length() - 1);
     }
+
 }

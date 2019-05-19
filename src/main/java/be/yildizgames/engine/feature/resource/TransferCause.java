@@ -60,4 +60,5 @@ public enum TransferCause {
                 .findFirst()
                 .orElseThrow(AssertionError::new);
     }
+
 }
