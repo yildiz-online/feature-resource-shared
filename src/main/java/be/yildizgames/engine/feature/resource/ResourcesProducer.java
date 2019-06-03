@@ -27,8 +27,6 @@ package be.yildizgames.engine.feature.resource;
 import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.resource.bonus.BonusListener;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -41,7 +39,7 @@ import java.util.Set;
  */
 public final class ResourcesProducer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ResourcesProducer.class);
+    private static final System.Logger LOGGER = System.getLogger(ResourcesProducer.class.getName());
 
     /**
      * Contains the ratio values, the array must math the resource array.
@@ -283,19 +281,19 @@ public final class ResourcesProducer {
      */
     private boolean invariant() {
         if (this.lastUpdate <= 0) {
-            LOGGER.warn("INVARIANT FAIL: lastUpdate value: {}", this.lastUpdate);
+            LOGGER.log(System.Logger.Level.WARNING,"INVARIANT FAIL: lastUpdate value: {}", this.lastUpdate);
             return false;
         }
         if (this.limit == null) {
-            LOGGER.warn("INVARIANT FAIL: limit is null");
+            LOGGER.log(System.Logger.Level.WARNING,"INVARIANT FAIL: limit is null");
             return false;
         }
         if (this.ratio == null) {
-            LOGGER.warn("INVARIANT FAIL: ratio is null");
+            LOGGER.log(System.Logger.Level.WARNING,"INVARIANT FAIL: ratio is null");
             return false;
         }
         if (this.resources == null) {
-            LOGGER.warn("INVARIANT FAIL: resources is null");
+            LOGGER.log(System.Logger.Level.WARNING,"INVARIANT FAIL: resources is null");
             return false;
         }
         return true;
