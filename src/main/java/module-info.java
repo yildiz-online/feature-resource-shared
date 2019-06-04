@@ -24,7 +24,6 @@
 
 module be.yildizgames.feature.resource.shared {
     requires be.yildizgames.common.model;
-    requires be.yildizgames.common.logging;
     requires be.yildizgames.common.mapping;
     requires be.yildizgames.common.mapping.model;
     requires be.yildizgames.common.util;
