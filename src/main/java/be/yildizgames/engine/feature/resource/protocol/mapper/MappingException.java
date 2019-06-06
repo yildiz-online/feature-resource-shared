@@ -23,9 +23,7 @@
  */
 package be.yildizgames.engine.feature.resource.protocol.mapper;
 
-import be.yildizgames.common.exception.business.BusinessException;
-
-class MappingException extends BusinessException {
+class MappingException extends IllegalArgumentException {
 
     MappingException(String message) {
         super(message);

@@ -27,7 +27,6 @@ module be.yildizgames.feature.resource.shared {
     requires be.yildizgames.common.mapping;
     requires be.yildizgames.common.mapping.model;
     requires be.yildizgames.common.util;
-    requires be.yildizgames.common.exception;
 
     exports be.yildizgames.engine.feature.resource;
     exports be.yildizgames.engine.feature.resource.protocol.mapper;
