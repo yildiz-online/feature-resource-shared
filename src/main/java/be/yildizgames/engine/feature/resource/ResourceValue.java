@@ -123,7 +123,7 @@ public class ResourceValue {
     public final String toString() {
         StringBuilder sb = new StringBuilder();
         for (float f : this.values) {
-            sb.append(f + ",");
+            sb.append(f).append(",");
         }
         return sb.toString();
     }
